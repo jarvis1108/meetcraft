@@ -1,6 +1,6 @@
 ---
 name: event-debrief
-description: Sediment what happened at an event before it fades. Use when the user mentions a meetup, workshop, conference, cohort session, or 1-on-1 networking conversation just ended (or pastes a transcript from one). Routes single-session events to event-debrief.md and multi-session cohorts/conferences to cohort-debrief.md folder convention. Captures takeaways, people met, feedback dispositions, and follow-up actions in a structured way that survives the 24-hour memory cliff.
+description: Sediment what happened at an event before the 24-hour memory cliff hits. Use this skill whenever the user mentions a meetup, workshop, conference, cohort session, mixer, networking event, informational call, coffee chat, or 1-on-1 just ended — even if they don't explicitly ask for a "debrief". Also use when they paste a Krisp/Whisper/Otter transcript, ask to "write up" or "recap" or "summarize" an event, or mention "notes from yesterday's [event]". Routes single-session events to event-debrief.md template and multi-session cohorts/conferences to cohort-debrief.md folder convention. Captures top takeaways, people met, feedback dispositions (adopt/consider/pass), and follow-up actions, and enforces a propagation list at the end so captured signal doesn't die in the file.
 ---
 
 # Event Debrief
@@ -13,9 +13,10 @@ Auto-trigger when the user:
 
 - Mentions "I just got back from {meetup, workshop, conference, mixer, cohort session}"
 - Pastes a Krisp / Whisper / Otter transcript and asks for synthesis
-- Says "let's debrief {event}" or "process the {event} transcript"
+- Says any of: "let's debrief {event}" / "process the {event} transcript" / "write up the {event}" / "recap {event}" / "summarize what came out of {event}"
 - Mentions a cohort week wrapped (recurring multi-session event)
-- Pastes notes from a 1-on-1 networking call and asks how to capture them
+- Mentions "notes from yesterday's {event}" or similar past-tense framing
+- Pastes notes from a 1-on-1 networking call, coffee chat, or informational interview and asks how to capture them
 
 Manual invocation: `/event-debrief` or just paste materials and ask for a debrief.
 
@@ -39,7 +40,17 @@ If unclear, ask: "Single-session debrief, or multi-session cohort folder?" Don't
    - **Krisp** for live speaker diarization (free, has speaker labels, but ~5-9 critical word errors per 3 min)
    - **Whisper-medium or larger** post-hoc for word accuracy if you'll quote specific phrases
    - **Speaker label + cleanup BEFORE analysis** — analyzing raw transcripts produces compounding errors that contaminate every downstream section
-2. No recording? → ask the user to brain-dump their top 3 memorable moments before the cliff hits; use that as the seed for Sessions / Conversations
+2. No recording, multi-person event? → ask the user to brain-dump their top 3 memorable moments + names of who they spoke to before the cliff hits; use that as the seed for Sessions / Conversations
+3. No recording, 1-on-1 call? → ask the user to recall the 2-3 substantive things the other person said + anything they committed to follow up on; use that as the seed for the single Session block
+
+### Phase 1.5 — Output location
+
+Decide where the debrief lives before writing. Suggest one of:
+- Single-session: alongside any pre-event prep file, e.g., `events/{YYYY-MM-DD}-{slug}-debrief.md`
+- Multi-session cohort: a folder, e.g., `events/{YYYY-MM}-{slug}/` per the cohort-debrief.md convention
+- 1-on-1 call: alongside the contact's record, or in a `calls/` folder
+
+If the user has no convention yet, propose one and ask. Don't silently pick a path and hope they like it.
 
 ### Phase 2 — Apply template
 
@@ -79,6 +90,10 @@ Don't complete the debrief without listing these propagation actions explicitly.
 - **Rewriting `takeaways.md`** in cohort case — append-only. Past entries stay even if the user's view shifts. The trail is the point.
 - **Closing without propagation list** — if the contacts / backlog / friction items aren't named for follow-up, the debrief is a dead artifact.
 - **Forcing single-session template on cohort material** — single file overflows above 5+ sessions. Use the folder convention.
+
+## Privacy note
+
+Debriefs often contain real names, employers, and specific feedback that other people gave the user. If the file lives in a private repo (most cases), this is fine. If the user plans to publish or share the debrief — for example, as a public skill example, blog post, or LinkedIn write-up — anonymize names (single letters or role-only references) and replace company names with category descriptors. The included [`examples/portfolio-critique-workshop.md`](examples/portfolio-critique-workshop.md) demonstrates this anonymization pattern in practice.
 
 ## Skill output format
 
