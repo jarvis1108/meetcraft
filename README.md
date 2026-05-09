@@ -1,6 +1,7 @@
-# meetcraft
+# meetcraft 
 
 > Some skills mine the moment. This one crafts the conversation — before and after.
+
 
 <img width="1672" height="941" alt="meetcraft hero" src="https://github.com/user-attachments/assets/c88f8df0-aefe-4a1c-83d4-7ff35b2b6261" />
 <br>
@@ -180,3 +181,6 @@ MIT — see [LICENSE](LICENSE).
 ---
 
 > *Repo aesthetic owes a debt to long evenings of Minecraft and even longer evenings of professional conversations.*
+>
+> <img width="28" height="28" alt="image" src="https://github.com/user-attachments/assets/9e666494-9a6f-4658-ae68-fcd0ff9df01f" />
+
