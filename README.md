@@ -2,9 +2,13 @@
 
 > Some skills mine the moment. This one crafts the conversation — before and after.
 
+<img width="1672" height="941" alt="meetcraft hero" src="https://github.com/user-attachments/assets/c88f8df0-aefe-4a1c-83d4-7ff35b2b6261" />
+<br>
+
 A Claude Code skill for **prepping** before professional conversations and **sedimenting** what came out after — for events (meetups, workshops, conferences, cohort sessions) and 1-on-1s (informational interviews, coffee chats, mentor catch-ups).
 
 **Input**: an upcoming conversation, or rough notes / a transcript from one that just happened.
+
 **Output**: a structured markdown file you can re-read in 3 months and still recognize what you set out to do — or what actually happened — plus an explicit propagation list (new contacts → your contact db, adopt-feedback → your backlog, etc.) so the captured signal doesn't die in a markdown file.
 
 ---
